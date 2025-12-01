@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Anaya Message</title>
+    <!-- icon -->
+    <link rel="icon" type="image/png" href="anaya-logo.webp" />
+    <style>
+      #hamburger .bar {
+        transform-origin: center;
+      }
+    </style>
+
+    <!-- AOS IMPORT -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white text-gray-700">
+    <!-- HEADER -->
+    <header class="w-full bg-amber-50 fixed top-0 left-0 z-50 shadow-sm">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <!-- LOGO -->
+        <a href="#" class="flex items-center">
+          <img
+            src="anaya-logo.webp"
+            alt="SOLOX Logo"
+            class="h-10 w-auto object-contain scale-125" />
+        </a>
+
+        <!-- DESKTOP MENU (CENTER) -->
+        <nav
+          class="hidden md:flex space-x-6 font-semibold text-gray-600 mx-auto">
+          <a href="#" class="hover:text-yellow-600">Layanan</a>
+          <a href="#" class="hover:text-yellow-600">Testimoni</a>
+          <a href="#" class="hover:text-yellow-600">Contact</a>
+        </nav>
+
+        <!-- BOOK NOW DESKTOP -->
+        <button
+          class="hidden md:block bg-yellow-600 text-white px-4 py-2 rounded-md">
+          Book Now
+        </button>
+
+        <!-- HAMBURGER -->
+        <button
+          id="hamburger"
+          class="md:hidden flex flex-col space-y-1 focus:outline-none">
+          <span
+            class="bar w-7 h-1 bg-yellow-600 transition-all duration-300"></span>
+          <span
+            class="bar w-7 h-1 bg-yellow-600 transition-all duration-300"></span>
+          <span
+            class="bar w-7 h-1 bg-yellow-600 transition-all duration-300"></span>
+        </button>
+      </div>
+
+      <!-- OFF CANVAS MENU -->
+      <div
+        id="mobileMenu"
+        class="fixed top-0 left-0 w-64 h-full bg-amber-50 shadow-lg transform -translate-x-full transition-transform duration-300 z-40 p-6 space-y-4 text-gray-700 font-semibold">
+        <a href="#" class="block">Layanan</a>
+        <a href="#" class="block">Tetimoni</a>
+        <a href="#" class="block">Contact</a>
+        <br />
+        <br />
+
+        <button
+          class="bg-yellow-600 text-white px-4 py-2 rounded-md mt-4 w-full">
+          Book Now
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO CAROUSEL -->
+    <section class="relative w-full h-[60vh] overflow-hidden">
+      <!-- SLIDES -->
+      <div class="carousel-slide absolute inset-0 w-full h-full">
+        <img src="spa-background.jpg" class="w-full h-full object-cover" />
+        <div
+          class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white px-6 text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            Nikmati Pengalaman Spa Premium
+          </h1>
+          <p class="text-lg md:text-xl max-w-2xl">
+            Relaksasi terbaik dengan pelayanan profesional untuk ketenangan
+            tubuh dan pikiran Anda.
+          </p>
+        </div>
+      </div>
+
+      <div class="carousel-slide absolute inset-0 w-full h-full hidden">
+        <img src="bg-2.webp" class="w-full h-full object-cover" />
+        <div
+          class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white px-6 text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            Perawatan Tubuh Terbaik
+          </h1>
+          <p class="text-lg md:text-xl max-w-2xl">
+            Kami hadir untuk memberikan kenyamanan maksimal melalui rangkaian
+            perawatan eksklusif.
+          </p>
+        </div>
+      </div>
+
+      <div class="carousel-slide absolute inset-0 w-full h-full hidden">
+        <img src="bg-2.webp" class="w-full h-full object-cover" />
+        <div
+          class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white px-6 text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            Spa yang Dirancang untuk Anda
+          </h1>
+          <p class="text-lg md:text-xl max-w-2xl">
+            Temukan kenyamanan terdalam melalui layanan spa yang disesuaikan
+            untuk kebutuhan Anda.
+          </p>
+        </div>
+      </div>
+
+      <!-- CONTROLS -->
+      <button
+        id="prevBtn"
+        class="absolute left-5 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 p-3 rounded-full">
+        ‹
+      </button>
+      <button
+        id="nextBtn"
+        class="absolute right-5 top-1/2 -translate-y-1/2 bg-white bg-opacity-50 p-3 rounded-full">
+        ›
+      </button>
+    </section>
+
+    <!-- layanan -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-12" data-aos="fade-up">
+          Layanan Kami
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Card 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
+            data-aos="fade-up"
+            data-aos-delay="100">
+            <!-- Foto -->
+            <div class="h-56 w-full overflow-hidden">
+              <img
+                src="message.webp"
+                alt="Layanan 1"
+                class="w-full h-full object-cover transition duration-300 hover:scale-110" />
+            </div>
+
+            <!-- Text -->
+            <div class="p-6 text-left">
+              <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                Pijat Relaksasi
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Nikmati pengalaman pijat relaksasi premium dengan terapis
+                profesional untuk mengurangi stres dan mengembalikan kebugaran
+                tubuh Anda.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
+            data-aos="fade-up"
+            data-aos-delay="200">
+            <div class="h-56 w-full overflow-hidden">
+              <img
+                src="bed.jpg"
+                alt="Layanan 2"
+                class="w-full h-full object-cover transition duration-300 hover:scale-110" />
+            </div>
+
+            <div class="p-6 text-left">
+              <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                Perawatan Wajah
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Perawatan wajah eksklusif menggunakan produk premium untuk
+                menjaga kulit tetap sehat, cerah, dan tampak lebih muda.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
+            data-aos="fade-up"
+            data-aos-delay="300">
+            <div class="h-56 w-full overflow-hidden">
+              <img
+                src="klinik.jpg"
+                alt="Layanan 3"
+                class="w-full h-full object-cover transition duration-300 hover:scale-110" />
+            </div>
+
+            <div class="p-6 text-left">
+              <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                Spa Aromaterapi
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Rasakan ketenangan melalui terapi spa aromaterapi yang
+                memberikan relaksasi mendalam dan meningkatkan kualitas tidur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL PREMIUM SECTION -->
+    <section class="py-20 bg-amber-50">
+      <div class="max-w-7xl mx-auto px-6 text-center mb-14" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-yellow-700 tracking-wide">
+          Testimoni Klien
+        </h2>
+        <p class="text-gray-600 mt-3 text-lg">
+          Dengarkan pengalaman dari para pelanggan kami yang terhormat
+          setelah menikmati layanan spa premium kami.
+
+        </p>
+        <div class="w-24 mx-auto mt-4 h-1 bg-yellow-600 rounded-full"></div>
+      </div>
+
+      <!-- GRID -->
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- CARD 1 -->
+        <div
+          class="bg-white rounded-3xl p-8 shadow-xl border border-yellow-100 hover:shadow-2xl transition"
+          data-aos="fade-right">
+          <div class="flex items-center space-x-4 mb-6">
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              class="w-20 h-20 rounded-full object-cover border-4 border-yellow-200 shadow-md" />
+            <div>
+              <h4 class="text-xl font-semibold text-gray-800">Ummu Hasan</h4>
+              <p class="text-sm text-yellow-700 font-medium">Entrepreneur</p>
+            </div>
+          </div>
+          <p class="text-gray-600 leading-relaxed italic">
+            “Pelayanan terbaik! Suasananya sangat menenangkan dan setiap detail
+            terasa begitu profesional dan berkelas.”
+          </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div
+          class="bg-white rounded-3xl p-8 shadow-xl border border-yellow-100 hover:shadow-2xl transition"
+          data-aos="fade-up">
+          <div class="flex items-center space-x-4 mb-6">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              class="w-20 h-20 rounded-full object-cover border-4 border-yellow-200 shadow-md" />
+            <div>
+              <h4 class="text-xl font-semibold text-gray-800">
+                Zaenal Abidin
+              </h4>
+              <p class="text-sm text-yellow-700 font-medium">Designer</p>
+            </div>
+          </div>
+          <p class="text-gray-600 leading-relaxed italic">
+            “Atmosfer spa yang sangat premium. Saya merasa seperti diberi
+            pengalaman kelas dunia. Highly recommended!”
+          </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div
+          class="bg-white rounded-3xl p-8 shadow-xl border border-yellow-100 hover:shadow-2xl transition"
+          data-aos="fade-left">
+          <div class="flex items-center space-x-4 mb-6">
+            <img
+              src="https://randomuser.me/api/portraits/women/68.jpg"
+              class="w-20 h-20 rounded-full object-cover border-4 border-yellow-200 shadow-md" />
+            <div>
+              <h4 class="text-xl font-semibold text-gray-800">Ummi Solehah</h4>
+              <p class="text-sm text-yellow-700 font-medium">Teacher</p>
+            </div>
+          </div>
+          <p class="text-gray-600 leading-relaxed italic">
+            “Pengalaman spa yang benar-benar mewah. Dari awal masuk hingga
+            selesai, semuanya sempurna!”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section class="py-20 bg-gray-50" id="lokasi">
+      <div class="max-w-6xl mx-auto px-6">
+        <!-- TITLE -->
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-800 mb-3">Lokasi Kami</h2>
+          <p class="text-gray-600">
+            Temukan kami dan rasakan pelayanan spa terbaik.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+          <!-- MAP -->
+          <div
+            class="w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg border">
+            <iframe
+              width="100%"
+              height="100%"
+              style="border: 0"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=-8.562556,116.109250&hl=id&z=15&output=embed">
+            </iframe>
+          </div>
+
+          <!-- DETAILS -->
+          <div class="space-y-6">
+            <!-- LOCATION -->
+            <div class="flex items-start space-x-4">
+              <i data-lucide="map-pin" class="w-7 h-7 text-yellow-600"></i>
+              <div>
+                <h3 class="text-xl font-semibold">Alamat</h3>
+                <p class="text-gray-600">
+                  Jl. Adi Sucipto, No. 24, Mataram, Nusa Tenggara Barat
+                </p>
+              </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="flex items-start space-x-4">
+              <i data-lucide="phone" class="w-7 h-7 text-yellow-600"></i>
+              <div>
+                <h3 class="text-xl font-semibold">Telepon</h3>
+                <p class="text-gray-600">+62 812-3456-7890</p>
+              </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="flex items-start space-x-4">
+              <i data-lucide="mail" class="w-7 h-7 text-yellow-600"></i>
+              <div>
+                <h3 class="text-xl font-semibold">Email</h3>
+                <p class="text-gray-600">admin@anaya-message.com</p>
+              </div>
+            </div>
+
+            <!-- HOURS -->
+            <div class="flex items-start space-x-4">
+              <i data-lucide="clock" class="w-7 h-7 text-yellow-600"></i>
+              <div>
+                <h3 class="text-xl font-semibold">Jam Operasional</h3>
+                <p class="text-gray-600">Senin – Sabtu: 09.00 – 20.00</p>
+                <p class="text-gray-600">Minggu: Tutup</p>
+              </div>
+            </div>
+
+            <!-- BUTTON -->
+            <a
+              href="https://maps.app.goo.gl/V6zjBmXzD3crwMUf9"
+              target="_blank"
+              class="inline-block mt-4 bg-yellow-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-yellow-700 transition">
+              Lihat di Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section class="py-20 bg-amber-50" id="booking">
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        <h2 class="text-3xl font-bold text-yellow-700">Formulir Pemesanan</h2>
+        <p class="text-gray-600 mt-2">
+          Isi data berikut untuk melakukan pemesanan layanan spa & kecantikan.
+        </p>
+      </div>
+
+      <div
+        class="max-w-md mx-auto bg-white shadow-lg rounded-xl p-6 border border-yellow-100"
+        data-aos="fade-up">
+        <form id="bookingForm" class="space-y-4">
+          <div>
+            <label class="block text-gray-700 font-medium mb-1"
+              >Nama Lengkap</label
+            >
+            <input
+              type="text"
+              id="nama"
+              required
+              class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+              placeholder="Masukkan nama anda" />
+          </div>
+
+          <div>
+            <label class="block text-gray-700 font-medium mb-1"
+              >Pilih Layanan</label
+            >
+            <select
+              id="layanan"
+              required
+              class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+              <option value="">-- Pilih Layanan --</option>
+              <option>Massage Relaksasi</option>
+              <option>Perawatan Wajah Premium</option>
+              <option>Body Scrub & Spa</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-gray-700 font-medium mb-1"
+              >Tanggal Kedatangan</label
+            >
+            <input
+              type="date"
+              id="tanggal"
+              required
+              class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
+          </div>
+
+          <div>
+            <label class="block text-gray-700 font-medium mb-1"
+              >Catatan Tambahan</label
+            >
+            <textarea
+              id="catatan"
+              class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+              placeholder="Tulis catatan jika ada..."></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-yellow-600 text-white font-semibold py-2 rounded-lg hover:bg-yellow-700 transition-all">
+            Kirim via WhatsApp
+          </button>
+        </form>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="bg-yellow-600 text-white py-10 mt-10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+          <div>
+            <a href="#" class="flex items-center">
+              <img
+                src="anaya-logo.webp"
+                alt="SOLOX Logo"
+                class="h-10 w-auto object-contain scale-125" />
+            </a>
+            <input
+              type="email"
+              placeholder="Email address"
+              class="mt-4 w-full p-2 rounded text-black" />
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">LINKS</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>Layanan</li>
+              <li>Booking</li>
+              <li>Lokasi</li>
+              <li>Testimoni</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">CONTACT</h4>
+            <p>+08123456778</p>
+            <p>admin@anaya-message.com</p>
+            <p>Jl. Majapahit NO. 25, Kota Mataram</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">Jam Operasional</h4>
+            <p>Senin sampai Sabtu: 9:00am - 6:00pm</p>
+            <p>Ahad: Tutup</p>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const bars = hamburger.querySelectorAll(".bar");
+
+        hamburger.addEventListener("click", () => {
+          // Toggle menu
+          mobileMenu.classList.toggle("-translate-x-full");
+
+          // Rotasi garis jadi X
+          bars[0].classList.toggle("rotate-45");
+          bars[0].classList.toggle("translate-y-2");
+
+          bars[1].classList.toggle("opacity-0");
+
+          bars[2].classList.toggle("-rotate-45");
+          bars[2].classList.toggle("-translate-y-2");
+        });
+      </script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          duration: 900,
+          once: true,
+        });
+      </script>
+
+      <script>
+        document
+          .getElementById("bookingForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let nama = document.getElementById("nama").value;
+            let layanan = document.getElementById("layanan").value;
+            let tanggal = document.getElementById("tanggal").value;
+            let catatan = document.getElementById("catatan").value;
+
+            // nomor WhatsApp dihapus sesuai permintaan (kosongkan)
+            let number = "";
+
+            let message =
+              `Halo, saya berminat untuk melakukan reservasi layanan spa. Berikut detail pemesanannya:%0A` +
+              `Nama: ${nama}%0A` +
+              `Layanan: ${layanan}%0A` +
+              `Tanggal: ${tanggal}%0A` +
+              `Catatan: ${catatan}`;
+
+            window.open(`https://wa.me/${number}?text=${message}`, "_blank");
+          });
+      </script>
+
+      <!-- SCRIPT -->
+      <script>
+        const slides = document.querySelectorAll(".carousel-slide");
+        let currentSlide = 0;
+
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("hidden", i !== index);
+          });
+        }
+
+        document.getElementById("prevBtn").onclick = () => {
+          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+          showSlide(currentSlide);
+        };
+
+        document.getElementById("nextBtn").onclick = () => {
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        };
+
+        // AUTO PLAY
+        setInterval(() => {
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        }, 6000);
+      </script>
+
+      <!-- Lucide Icons -->
+      <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+      <script>
+        lucide.createIcons();
+      </script>
+    </section>
+  </body>
+</html>
