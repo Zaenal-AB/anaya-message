@@ -3,8 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Nikmati layanan spa premium, pijat relaksasi, dan perawatan wajah terbaik di Anaya Message Mataram. Solusi relaksasi tubuh dan pikiran Anda." />
+    <meta
+      name="keywords"
+      content="spa mataram, pijat lombok, massage relaksasi, perawatan wajah, aromaterapi, anaya message, spa premium" />
+    <meta name="author" content="Anaya Message" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Anaya Message - Premium Spa & Relaxation" />
+    <meta
+      property="og:description"
+      content="Nikmati layanan spa premium, pijat relaksasi, dan perawatan wajah terbaik di Anaya Message Mataram." />
+    <meta property="og:image" content="spa-background.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Anaya Message - Premium Spa & Relaxation" />
+    <meta
+      property="twitter:description"
+      content="Nikmati layanan spa premium, pijat relaksasi, dan perawatan wajah terbaik di Anaya Message Mataram." />
+    <meta property="twitter:image" content="spa-background.jpg" />
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Anaya Message</title>
+    <title>Anaya Message - Premium Spa & Relaxation</title>
     <!-- icon -->
     <link rel="icon" type="image/png" href="anaya-logo.webp" />
     <style>
@@ -16,60 +47,96 @@
     <!-- AOS IMPORT -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body class="bg-white text-gray-700">
+  <body class="bg-white text-gray-700 overflow-x-hidden">
     <!-- HEADER -->
-    <header class="w-full bg-amber-50 fixed top-0 left-0 z-50 shadow-sm">
+    <header
+      class="w-full bg-white/90 backdrop-blur-md fixed top-0 left-0 z-50 shadow-md transition-all duration-300">
       <div
-        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
         <!-- LOGO -->
-        <a href="#" class="flex items-center">
+        <a href="#" class="flex items-center gap-2">
           <img
             src="anaya-logo.webp"
-            alt="SOLOX Logo"
-            class="h-10 w-auto object-contain scale-125" />
+            alt="Anaya Message Logo"
+            class="h-12 w-auto object-contain" />
         </a>
 
         <!-- DESKTOP MENU (CENTER) -->
-        <nav
-          class="hidden md:flex space-x-6 font-semibold text-gray-600 mx-auto">
-          <a href="#" class="hover:text-yellow-600">Layanan</a>
-          <a href="#" class="hover:text-yellow-600">Testimoni</a>
-          <a href="#" class="hover:text-yellow-600">Contact</a>
+        <nav class="hidden md:flex space-x-8 font-medium text-gray-700 mx-auto">
+          <a
+            href="#"
+            class="hover:text-yellow-600 transition-colors duration-300"
+            >Beranda</a
+          >
+          <a
+            href="#"
+            class="hover:text-yellow-600 transition-colors duration-300"
+            >Layanan</a
+          >
+          <a
+            href="#"
+            class="hover:text-yellow-600 transition-colors duration-300"
+            >Galeri</a
+          >
+          <a
+            href="#"
+            class="hover:text-yellow-600 transition-colors duration-300"
+            >Testimoni</a
+          >
+          <a
+            href="#"
+            class="hover:text-yellow-600 transition-colors duration-300"
+            >Kontak</a
+          >
         </nav>
 
         <!-- BOOK NOW DESKTOP -->
-        <button
-          class="hidden md:block bg-yellow-600 text-white px-4 py-2 rounded-md">
-          Book Now
-        </button>
+        <a
+          href="#booking"
+          class="hidden md:inline-block bg-yellow-600 text-white px-6 py-2.5 rounded-full shadow-lg hover:bg-yellow-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 font-medium">
+          Reservasi
+        </a>
 
         <!-- HAMBURGER -->
         <button
           id="hamburger"
-          class="md:hidden flex flex-col space-y-1 focus:outline-none">
+          class="md:hidden flex flex-col space-y-1 focus:outline-none p-2">
           <span
-            class="bar w-7 h-1 bg-yellow-600 transition-all duration-300"></span>
+            class="bar w-7 h-1 bg-yellow-600 transition-all duration-300 rounded-full"></span>
           <span
-            class="bar w-7 h-1 bg-yellow-600 transition-all duration-300"></span>
+            class="bar w-7 h-1 bg-yellow-600 transition-all duration-300 rounded-full"></span>
           <span
-            class="bar w-7 h-1 bg-yellow-600 transition-all duration-300"></span>
+            class="bar w-7 h-1 bg-yellow-600 transition-all duration-300 rounded-full"></span>
         </button>
       </div>
 
       <!-- OFF CANVAS MENU -->
       <div
         id="mobileMenu"
-        class="fixed top-0 left-0 w-64 h-full bg-amber-50 shadow-lg transform -translate-x-full transition-transform duration-300 z-40 p-6 space-y-4 text-gray-700 font-semibold">
-        <a href="#" class="block">Layanan</a>
-        <a href="#" class="block">Tetimoni</a>
-        <a href="#" class="block">Contact</a>
-        <br />
-        <br />
+        class="fixed top-0 left-0 w-3/4 max-w-xs h-screen bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 z-40 flex flex-col">
+        <div
+          class="p-6 border-b border-gray-100 flex justify-between items-center">
+          <img src="anaya-logo.webp" alt="Logo" class="h-10 w-auto" />
+        </div>
 
-        <button
-          class="bg-yellow-600 text-white px-4 py-2 rounded-md mt-4 w-full">
-          Book Now
-        </button>
+        <div
+          class="p-6 space-y-6 text-gray-700 font-medium text-lg flex-1 overflow-y-auto">
+          <a href="#" class="block hover:text-yellow-600 transition">Beranda</a>
+          <a href="#" class="block hover:text-yellow-600 transition">Layanan</a>
+          <a href="#" class="block hover:text-yellow-600 transition">Galeri</a>
+          <a href="#" class="block hover:text-yellow-600 transition"
+            >Testimoni</a
+          >
+          <a href="#" class="block hover:text-yellow-600 transition">Kontak</a>
+        </div>
+
+        <div class="p-6 border-t border-gray-100">
+          <a
+            href="#booking"
+            class="block w-full bg-yellow-600 text-white text-center px-4 py-3 rounded-lg shadow hover:bg-yellow-700 transition">
+            Reservasi Sekarang
+          </a>
+        </div>
       </div>
     </header>
 
@@ -214,6 +281,97 @@
       </div>
     </section>
 
+    <!-- GALLERY SECTION -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6 text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4" data-aos="fade-up">
+          Galeri Suasana
+        </h2>
+        <p
+          class="text-gray-600 max-w-2xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="100">
+          Intip kenyamanan dan kemewahan interior kami yang dirancang khusus
+          untuk ketenangan Anda.
+        </p>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Image 1 -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-lg h-64 cursor-pointer"
+          data-aos="fade-up"
+          data-aos-delay="100">
+          <img
+            src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=800&auto=format&fit=crop"
+            alt="Ruang Spa Mewah"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+        <!-- Image 2 -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-lg h-64 cursor-pointer"
+          data-aos="fade-up"
+          data-aos-delay="200">
+          <img
+            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop"
+            alt="Perawatan Wajah"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+        <!-- Image 3 -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-lg h-64 cursor-pointer"
+          data-aos="fade-up"
+          data-aos-delay="300">
+          <img
+            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
+            alt="Pijat Relaksasi"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+        <!-- Image 4 -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-lg h-64 cursor-pointer"
+          data-aos="fade-up"
+          data-aos-delay="400">
+          <img
+            src="https://images.unsplash.com/photo-1519823551278-64ac927d4fe1?q=80&w=800&auto=format&fit=crop"
+            alt="Aromaterapi"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+        <!-- Image 5 -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-lg h-64 cursor-pointer"
+          data-aos="fade-up"
+          data-aos-delay="500">
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop"
+            alt="Interior Nyaman"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+        <!-- Image 6 -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-lg h-64 cursor-pointer"
+          data-aos="fade-up"
+          data-aos-delay="600">
+          <img
+            src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop"
+            alt="Produk Premium"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- TESTIMONIAL PREMIUM SECTION -->
     <section class="py-20 bg-amber-50">
       <div class="max-w-7xl mx-auto px-6 text-center mb-14" data-aos="fade-up">
@@ -221,9 +379,8 @@
           Testimoni Klien
         </h2>
         <p class="text-gray-600 mt-3 text-lg">
-          Dengarkan pengalaman dari para pelanggan kami yang terhormat
-          setelah menikmati layanan spa premium kami.
-
+          Dengarkan pengalaman dari para pelanggan kami yang terhormat setelah
+          menikmati layanan spa premium kami.
         </p>
         <div class="w-24 mx-auto mt-4 h-1 bg-yellow-600 rounded-full"></div>
       </div>
@@ -259,9 +416,7 @@
               src="https://randomuser.me/api/portraits/men/32.jpg"
               class="w-20 h-20 rounded-full object-cover border-4 border-yellow-200 shadow-md" />
             <div>
-              <h4 class="text-xl font-semibold text-gray-800">
-                Zaenal Abidin
-              </h4>
+              <h4 class="text-xl font-semibold text-gray-800">Zaenal Abidin</h4>
               <p class="text-sm text-yellow-700 font-medium">Designer</p>
             </div>
           </div>
@@ -477,6 +632,23 @@
           </div>
         </div>
       </footer>
+
+      <!-- Floating WhatsApp Button -->
+      <a
+        href="https://wa.me/6281234567890?text=Halo%20Anaya%20Message,%20saya%20ingin%20bertanya%20tentang%20layanan%20spa."
+        target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center"
+        aria-label="Chat WhatsApp">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="white">
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+      </a>
 
       <script>
         const hamburger = document.getElementById("hamburger");
